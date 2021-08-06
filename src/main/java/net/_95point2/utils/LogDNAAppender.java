@@ -31,7 +31,7 @@ public class LogDNAAppender extends UnsynchronizedAppenderBase<ILoggingEvent>
 	/*
 	 * configurables ( plus ingestKey )
 	 */
-	private String hostname = getHostName();
+	private String hostname;
 	private String appName;
 	private boolean includeStacktrace = true;
 	private boolean sendMDC = true;
@@ -112,7 +112,9 @@ public class LogDNAAppender extends UnsynchronizedAppenderBase<ILoggingEvent>
 		}
 	}
 
-
+	public void setHostname(String hostname) {
+		this.hostname = hostname;
+	}
 
 	public void setAppName(String appName) {
 		this.appName = appName;
